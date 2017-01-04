@@ -11,7 +11,7 @@ Extensions to the Angular2 event handling to make use of additional events and a
 ```html
 <div (outside.click)="close()">...</div>
 
-<button (down)="activate()" (up)="deactivate()"></button>
+<button (down)="activate()" (up)="deactivate()">...</button>
 
 <input (multi.focus,select)="foo($event)" />
 
@@ -19,7 +19,7 @@ Extensions to the Angular2 event handling to make use of additional events and a
 
 <button (observe.throttleTime-500.click)="handleClick()">...</button>
 
-<button [ev-observe]="subject" [ev-events]="['mousedown', 'mouseup']"></button>
+<button [ev-observe]="subject" [ev-events]="['mousedown', 'mouseup']">...</button>
 ```
 
 
@@ -69,9 +69,9 @@ export class SharedModule {}
 The recommended way is to only import the sub-modules for the features you need.
 
 
-### Additional Events
+## Additional Events
 
-#### *outside*: Listen to events outside of an element
+### *outside*: Listen to events outside of an element
 
 Import the `OutsideEventModule` into your application to use this event handler.
 
@@ -82,12 +82,12 @@ Import the `OutsideEventModule` into your application to use this event handler.
 The event handler is called when an event is fired outside of the element and its children.
 
 
-#### *up/down*: Cross-browser quick mouse/touch events
+### *up/down*: Cross-browser quick mouse/touch events
 
 Import the `TouchEventModule` into your application to use this event handler.
 
 ```html
-<button (down)="activate()" (up)="deactivate()"></button>
+<button (down)="activate()" (up)="deactivate()">...</button>
 ```
 
 The up/down events are fired when one of the following events is fired on the element:
@@ -99,9 +99,9 @@ The up/down events are fired when one of the following events is fired on the el
 Note that `preventDefault()` is called on the first event to occur to make sure that the event handler is only fired once. This prevents touch-enabled devices from firing the handler for both the `touchstart` and the `mousedown` event.
 
 
-### Event Helpers
+## Event Helpers
 
-#### *multi*: Listen to multiple events at once
+### *multi*: Listen to multiple events at once
 
 Import the `MultiEventModule` into your application to use this event handler.
 
@@ -110,9 +110,9 @@ Import the `MultiEventModule` into your application to use this event handler.
 ```
 
 
-### Change Detection
+## Change Detection
 
-#### *undetected*: Listen to events without triggering change detection
+### *undetected*: Listen to events without triggering change detection
 
 Import the `UndetectedEventModule` into your application to use this event handler.
 
@@ -138,7 +138,7 @@ export class ExampleComponent implements OnInit {
 This adds the event listener outside of the Angular zone, thus change detection is not triggered until you manually call `NgZone.run()` or a different event is fired within the Angular zone.
 
 
-#### *observe*: Call an observable operator on events
+### *observe*: Call an observable operator on events
 
 Import the `ObserveEventModule` into your application to use this event handler.
 
@@ -155,20 +155,20 @@ import 'rxjs/add/operator/throttleTime';
 To get finer-grained control and the possibility to add multiple observable operators use the observe Directive.
 
 
-#### *observe Directive*: Fire events on an observable subject
+### *observe Directive*: Fire events on an observable subject
 
 Import the `ObserveEventDirectiveModule` into your application to use this directive.
 
 Observe a single event:
 
 ```html
-<button [ev-observe]="subject" ev-events="click"></button>
+<button [ev-observe]="subject" ev-events="click">...</button>
 ```
 
 Observe multiple events:
 
 ```html
-<button [ev-observe]="subject" [ev-events]="['mousedown', 'mouseup']"></button>
+<button [ev-observe]="subject" [ev-events]="['mousedown', 'mouseup']">...</button>
 ```
 
 ```ts
