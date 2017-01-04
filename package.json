@@ -1,0 +1,42 @@
+{
+  "name": "ng2-events",
+  "version": "1.0.0",
+  "description": "Supercharge your Angular2 event handling",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run ngc",
+    "ngc": "ngc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kryops/ng2-events.git"
+  },
+  "author": "Michael Strobel <michael@kryops.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kryops/ng2-events/issues"
+  },
+  "homepage": "https://github.com/kryops/ng2-events#readme",
+  "devDependencies": {
+    "@angular/common": "^2.4.1",
+    "@angular/compiler": "^2.4.1",
+    "@angular/compiler-cli": "^2.4.1",
+    "@angular/core": "^2.4.1",
+    "@angular/platform-browser": "^2.4.1",
+    "rimraf": "^2.5.4",
+    "rxjs": "^5.0.2",
+    "typescript": "^2.0.10",
+    "zone.js": "^0.7.4"
+  },
+  "peerDependencies": {
+    "@angular/common": "*",
+    "@angular/compiler": "*",
+    "@angular/core": "*",
+    "@angular/platform-browser": "*",
+    "rxjs": "*",
+    "zone.js": "*"
+  }
+}

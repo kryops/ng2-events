@@ -1,0 +1,6 @@
+src
+.idea
+tsconfig.json
+*.ts
+!*.d.ts
+*.ngsummary.json
