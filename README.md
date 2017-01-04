@@ -15,6 +15,8 @@ Extensions to the Angular2 event handling to make use of additional events and a
 
 <input (multi.focus,select)="foo($event)" />
 
+<button (once.click)="foo()">...</button>
+
 <button (undetected.click)="handleUndetectedClick()">...</button>
 
 <button (observe.throttleTime-500.click)="handleClick()">...</button>
@@ -108,6 +110,16 @@ Import the `MultiEventModule` into your application to use this event handler.
 ```html
 <input (multi.focus,select)="foo($event)" />
 ```
+
+### *once*: Only fire event listener once
+
+Import the `OnceEventModule` into your application to use this event handler.
+
+```html
+<button (once.click)="foo()">...</button>
+```
+
+The event listener is unregistered when the event is first fired. Note that it is reattached every time the element is newly rendered, especially inside `*ngIf` and `*ngFor` blocks when conditions or references change.
 
 
 ## Change Detection

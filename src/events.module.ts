@@ -4,8 +4,8 @@ import {UndetectedEventModule} from "./undetected/undetected.module";
 import {MultiEventModule} from "./multi/multi.module";
 import {ObserveEventModule} from "./observe/observe.module";
 import {ObserveEventDirectiveModule} from "./observe-directive/observe-directive.module";
-import {ObserveEventDirective} from "./observe-directive/observe-event.directive";
 import {TouchEventModule} from "./touch/touch.module";
+import {OnceEventModule} from "./once/once.module";
 
 @NgModule({
     imports: [
@@ -14,7 +14,8 @@ import {TouchEventModule} from "./touch/touch.module";
         MultiEventModule,
         UndetectedEventModule,
         ObserveEventModule,
-        ObserveEventDirectiveModule
+        ObserveEventDirectiveModule,
+        OnceEventModule
     ],
     exports: [
         OutsideEventModule,
@@ -22,7 +23,8 @@ import {TouchEventModule} from "./touch/touch.module";
         MultiEventModule,
         UndetectedEventModule,
         ObserveEventModule,
-        ObserveEventDirectiveModule
+        ObserveEventDirectiveModule,
+        OnceEventModule
     ]
 })
 export class Ng2EventsModule {}
