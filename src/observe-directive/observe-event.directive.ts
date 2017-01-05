@@ -1,4 +1,4 @@
-import {Directive, Renderer, ElementRef, Input, NgZone} from "@angular/core";
+import {Directive, Renderer, ElementRef, Input, NgZone, OnDestroy} from "@angular/core";
 import {Subject} from "rxjs/Subject";
 
 /**
@@ -30,11 +30,11 @@ import {Subject} from "rxjs/Subject";
 @Directive({
     selector: '[ev-observe]'
 })
-export class ObserveEventDirective {
+export class ObserveEventDirective implements OnDestroy {
 
     @Input('ev-observe') observe: Subject<any>;
     @Input('ev-events') set events(e: string|string[]) {
-        this.listeners.forEach(x => x());
+        this.unregisterAll();
 
         const events = (typeof(e) === 'string')
             ? [e]
@@ -51,6 +51,17 @@ export class ObserveEventDirective {
     constructor(private elm: ElementRef,
                 private renderer: Renderer,
                 private zone: NgZone) { }
+
+
+    ngOnDestroy(): void {
+        this.unregisterAll();
+    }
+
+
+    private unregisterAll() {
+        this.listeners.forEach(x => x());
+        this.listeners = [];
+    }
 
     private addListener(eventName: string): Function {
         const colon = eventName.indexOf(':');
