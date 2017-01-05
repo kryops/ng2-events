@@ -41,8 +41,7 @@ export class ObserveEventDirective {
             : e;
 
         this.zone.runOutsideAngular(() => {
-            this.listeners = events.map(x =>
-                this.renderer.listen(this.elm.nativeElement, x, ($event: any) => this.fireEvent($event)))
+            this.listeners = events.map(x => this.addListener(x));
         });
     }
 
@@ -53,6 +52,19 @@ export class ObserveEventDirective {
                 private renderer: Renderer,
                 private zone: NgZone) { }
 
+    private addListener(eventName: string): Function {
+        const colon = eventName.indexOf(':');
+        const handler = ($event: any) => this.fireEvent($event);
+
+        if(colon === -1) {
+            return this.renderer.listen(this.elm.nativeElement, eventName, handler);
+        }
+        else {
+            const scope = eventName.slice(0, colon);
+            const realEventName = eventName.slice(colon+1);
+            return this.renderer.listenGlobal(scope, realEventName, handler);
+        }
+    }
 
     private fireEvent($event: any) {
         if(!this.observe) return;
