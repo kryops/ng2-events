@@ -10,15 +10,16 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "strictNullChecks": false,
-    "outDir": "dist",
+    "outDir": "lib",
     "declaration": true,
     "lib": ["es5", "es2015", "dom", "ScriptHost"]
   },
   "exclude": [
     "node_modules/**",
-    "dist/**"
+    "lib/**"
   ],
   "angularCompilerOptions": {
-    "genDir": "dist"
+    "genDir": "lib",
+    "skipTemplateCodegen": true
   }
 }

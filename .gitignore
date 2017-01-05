@@ -8,4 +8,9 @@ npm-debug.log
 
 !.gitkeep
 
-dist/
+lib/
+*.tgz
+*.js
+*.d.ts
+*.metadata.json
+*.ngsummary.json

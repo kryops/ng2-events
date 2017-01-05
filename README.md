@@ -58,12 +58,8 @@ import {NgModule} from "@angular/core";
 import {Ng2EventsModule} from "ng2-events";
 
 @NgModule({
-    imports: [
-        Ng2EventsModule
-    ],
-    exports: [
-        Ng2EventsModule
-    ]
+    imports: [Ng2EventsModule],
+    exports: [Ng2EventsModule]
 })
 export class SharedModule {}
 ```
@@ -75,7 +71,16 @@ The recommended way is to only import the sub-modules for the features you need.
 
 ### *outside*: Listen to events outside of an element
 
-Import the `OutsideEventModule` into your application to use this event handler.
+```ts
+import {NgModule} from "@angular/core";
+import {OutsideEventModule} from "ng2-events/lib/outside";
+
+@NgModule({
+    imports: [OutsideEventModule],
+    exports: [OutsideEventModule]
+})
+export class SharedModule {}
+```
 
 ```html
 <div (outside.click)="close()">...</div>
@@ -86,7 +91,16 @@ The event handler is called when an event is fired outside of the element and it
 
 ### *up/down*: Cross-browser quick mouse/touch events
 
-Import the `TouchEventModule` into your application to use this event handler.
+```ts
+import {NgModule} from "@angular/core";
+import {TouchEventModule} from "ng2-events/lib/touch";
+
+@NgModule({
+    imports: [TouchEventModule],
+    exports: [TouchEventModule]
+})
+export class SharedModule {}
+```
 
 ```html
 <button (down)="activate()" (up)="deactivate()">...</button>
@@ -105,7 +119,16 @@ Note that `preventDefault()` is called on the first event to occur to make sure 
 
 ### *multi*: Listen to multiple events at once
 
-Import the `MultiEventModule` into your application to use this event handler.
+```ts
+import {NgModule} from "@angular/core";
+import {MultiEventModule} from "ng2-events/lib/multi";
+
+@NgModule({
+    imports: [MultiEventModule],
+    exports: [MultiEventModule]
+})
+export class SharedModule {}
+```
 
 ```html
 <input (multi.focus,select)="foo($event)" />
@@ -113,7 +136,16 @@ Import the `MultiEventModule` into your application to use this event handler.
 
 ### *once*: Only fire event listener once
 
-Import the `OnceEventModule` into your application to use this event handler.
+```ts
+import {NgModule} from "@angular/core";
+import {OnceEventModule} from "ng2-events/lib/once";
+
+@NgModule({
+    imports: [OnceEventModule],
+    exports: [OnceEventModule]
+})
+export class SharedModule {}
+```
 
 ```html
 <button (once.click)="foo()">...</button>
@@ -126,7 +158,16 @@ The event listener is unregistered when the event is first fired. Note that it i
 
 ### *undetected*: Listen to events without triggering change detection
 
-Import the `UndetectedEventModule` into your application to use this event handler.
+```ts
+import {NgModule} from "@angular/core";
+import {UndetectedEventModule} from "ng2-events/lib/undetected";
+
+@NgModule({
+    imports: [UndetectedEventModule],
+    exports: [UndetectedEventModule]
+})
+export class SharedModule {}
+```
 
 ```html
 <button (undetected.click)="handleClick()">...</button>
@@ -152,7 +193,16 @@ This adds the event listener outside of the Angular zone, thus change detection 
 
 ### *observe*: Call an observable operator on events
 
-Import the `ObserveEventModule` into your application to use this event handler.
+```ts
+import {NgModule} from "@angular/core";
+import {ObserveEventModule} from "ng2-events/lib/observe";
+
+@NgModule({
+    imports: [ObserveEventModule],
+    exports: [ObserveEventModule]
+})
+export class SharedModule {}
+```
 
 ```html
 <button (observe.throttleTime-500.click)="handleClick()">...</button>
@@ -169,7 +219,16 @@ To get finer-grained control and the possibility to add multiple observable oper
 
 ### *observe Directive*: Fire events on an observable subject
 
-Import the `ObserveEventDirectiveModule` into your application to use this directive.
+```ts
+import {NgModule} from "@angular/core";
+import {ObserveEventDirectiveModule} from "ng2-events/lib/observe-directive";
+
+@NgModule({
+    imports: [ObserveEventDirectiveModule],
+    exports: [ObserveEventDirectiveModule]
+})
+export class SharedModule {}
+```
 
 Observe a single event:
 
