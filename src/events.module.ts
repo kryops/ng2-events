@@ -7,6 +7,7 @@ import {ObserveEventDirectiveModule} from "./observe-directive";
 import {TouchEventModule} from "./touch";
 import {OnceEventModule} from "./once";
 import {ConditionEventDirectiveModule} from "./condition-directive";
+import {ScrollEventModule} from "./scroll";
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import {ConditionEventDirectiveModule} from "./condition-directive";
         ObserveEventModule,
         ObserveEventDirectiveModule,
         OnceEventModule,
-        ConditionEventDirectiveModule
+        ConditionEventDirectiveModule,
+        ScrollEventModule
     ],
     exports: [
         OutsideEventModule,
@@ -27,7 +29,8 @@ import {ConditionEventDirectiveModule} from "./condition-directive";
         ObserveEventModule,
         ObserveEventDirectiveModule,
         OnceEventModule,
-        ConditionEventDirectiveModule
+        ConditionEventDirectiveModule,
+        ScrollEventModule
     ]
 })
 export class Ng2EventsModule {}

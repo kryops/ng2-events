@@ -2,6 +2,7 @@ Extensions to the Angular2 event handling to make use of additional events and a
 
 *   Listen to events outside of the current element
 *   Up/down event handlers for cross-browser touch/mouse events
+*   Scroll-in/out event handlers to control behavior of elements within or outside the viewport
 *   Listen to multiple events with a single handler
 *   Unregister an event listener after the event fires once
 *   Attach event listeners only when a condition is met
@@ -14,6 +15,8 @@ Extensions to the Angular2 event handling to make use of additional events and a
 <div (outside.click)="close()">...</div>
 
 <button (down)="activate()" (up)="deactivate()">...</button>
+
+<div (scroll-in)="activate()" (scroll-out)="deactivate()">...</div>
 
 <input (multi.focus,select)="foo($event)" />
 
@@ -119,6 +122,34 @@ The up/down events are fired when one of the following events is fired on the el
 Note that `preventDefault()` is called on the first event to occur to make sure that the event handler is only fired once. This prevents touch-enabled devices from firing the handler for both the `touchstart` and the `mousedown` event.
 
 For more complex touch gestures use the HammerJS integration.
+
+
+### *scroll-in / scroll-out*: Detect when an element is entering or leaving the viewport
+
+```ts
+import {NgModule} from "@angular/core";
+import {ScrollEventModule, SCROLL_EVENT_TIME} from "ng2-events/lib/scroll";
+
+@NgModule({
+    imports: [ScrollEventModule],
+    exports: [ScrollEventModule],
+    providers: [
+        {provide: SCROLL_EVENT_TIME, useValue: 500}
+    ]
+})
+export class SharedModule {}
+```
+
+```html
+<div (scroll-in)="activate()" (scroll-out)="deactivate()">...</div>
+```
+
+This event handler reacts to the window's `scroll`, `resize`, and `orientationchange` events. It only checks the vertical scrolling within the window.
+
+The configuration value `SCROLL_EVENT_TIME` sets a minimum time distance between checks to keep the performance impact low. The default value is 200ms.
+
+Upon initialization the event handler is called directly if the element has the matching status (`scroll-in` is called if the element is visible in the viewport at rendering time, `scroll-out` is called otherwise). `$event` is `true` for the initial call, `false` for all subsequent calls.
+
 
 
 ## Event Helpers
