@@ -2,7 +2,7 @@ Extensions to the Angular2 event handling to make use of additional events and a
 
 *   Listen to events outside of the current element
 *   Up/down event handlers for cross-browser touch/mouse events
-*   Listen to multiple events with one handler
+*   Listen to multiple events with a single handler
 *   Listen to events without triggering change detection
 *   Use Observables to fine-tune when to trigger change detection
 
@@ -114,6 +114,8 @@ The up/down events are fired when one of the following events is fired on the el
 
 Note that `preventDefault()` is called on the first event to occur to make sure that the event handler is only fired once. This prevents touch-enabled devices from firing the handler for both the `touchstart` and the `mousedown` event.
 
+For more complex touch gestures use the HammerJS integration.
+
 
 ## Event Helpers
 
@@ -155,6 +157,8 @@ The event listener is unregistered when the event is first fired. Note that it i
 
 
 ## Change Detection
+
+**Note**: The following event helpers will work for primitive events (such as 'click', 'mousemove', ...). More complex event plugins such as the HammerJS touch gesture integration take control over their own change detection handling.
 
 ### *undetected*: Listen to events without triggering change detection
 
@@ -262,5 +266,3 @@ export class ExampleComponent implements OnInit {
     }
 }
 ```
-
-Notes: The [ev-events] property can be either a string for a single event or an array of strings to handle multiple events.
