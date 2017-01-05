@@ -3,6 +3,8 @@ Extensions to the Angular2 event handling to make use of additional events and a
 *   Listen to events outside of the current element
 *   Up/down event handlers for cross-browser touch/mouse events
 *   Listen to multiple events with a single handler
+*   Unregister an event listener after the event fires once
+*   Attach event listeners only when a condition is met
 *   Listen to events without triggering change detection
 *   Use Observables to fine-tune when to trigger change detection
 
@@ -16,6 +18,8 @@ Extensions to the Angular2 event handling to make use of additional events and a
 <input (multi.focus,select)="foo($event)" />
 
 <button (once.click)="foo()">...</button>
+
+<button [ev-condition]="cond" ev-events="click" (ev-fire)="foo()">...</button>
 
 <button (undetected.click)="handleUndetectedClick()">...</button>
 
@@ -154,6 +158,63 @@ export class SharedModule {}
 ```
 
 The event listener is unregistered when the event is first fired. Note that it is reattached every time the element is newly rendered, especially inside `*ngIf` and `*ngFor` blocks when conditions or references change.
+
+
+### *condition Directive*: Only attach event listeners when a condition is met
+
+```ts
+import {NgModule} from "@angular/core";
+import {ConditionEventDirectiveModule} from "ng2-events/lib/condition-directive";
+
+@NgModule({
+    imports: [ConditionEventDirectiveModule],
+    exports: [ConditionEventDirectiveModule]
+})
+export class SharedModule {}
+```
+
+Listen to a single event:
+
+```html
+<button [ev-condition]="isActive()"
+    ev-events="click"
+    (ev-fire)="handleClick($event)">...</button>
+```
+
+Listen to multiple events:
+
+```html
+<button [ev-condition]="isActive()"
+    [ev-events]="['mousedown', 'mouseup']"
+    (ev-fire)="handleEvent($event)">...</button>
+```
+
+This directive also allows for listening to a dynamic set of events:
+
+```html
+<button [ev-condition]="true"
+    [ev-events]="events"
+    (ev-fire)="handleEvent($event)">...</button>
+```
+
+```ts
+export class ExampleComponent {
+    
+    events = ['mousedown'];
+    
+    changeEvents() {
+        this.events = ['mouseup'];
+    }
+    
+}
+```
+
+**Note**: If you just change events within the array, you have to manually change its reference so the change detector picks the change up and resets the event listeners:
+
+```ts
+this.events.push('click');
+this.events = this.events.slice();
+```
 
 
 ## Change Detection
