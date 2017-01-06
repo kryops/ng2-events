@@ -10,7 +10,6 @@ npm-debug.log
 
 lib/
 *.tgz
-*.js
 *.d.ts
 *.metadata.json
 *.ngsummary.json
