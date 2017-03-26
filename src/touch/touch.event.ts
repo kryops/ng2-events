@@ -1,5 +1,6 @@
-import {Injectable} from "@angular/core";
-import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event_manager";
+import {Inject, Injectable} from "@angular/core";
+import {DOCUMENT} from "@angular/platform-browser";
+import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
 /**
  * Quick-firing 'up' and 'down' events that work cross-browser for mouse and touch events
@@ -9,7 +10,11 @@ import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event
  *
  */
 @Injectable()
-export class TouchEventPlugin extends EventManagerPlugin {
+export class TouchEventPlugin extends MyEventManagerPlugin {
+
+    constructor(@Inject(DOCUMENT) doc: any) {
+        super(doc)
+    }
 
     supports(eventName: string): boolean {
         return eventName === 'down' || eventName === 'up';

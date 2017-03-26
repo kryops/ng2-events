@@ -1,9 +1,10 @@
-import {Injectable, OpaqueToken, Inject} from "@angular/core";
-import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event_manager";
+import {Injectable, Inject, InjectionToken} from "@angular/core";
+import {DOCUMENT} from "@angular/platform-browser";
+import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 import {Subject} from "rxjs/Subject";
 import "rxjs/add/operator/auditTime";
 
-export const SCROLL_EVENT_TIME: OpaqueToken = new OpaqueToken('ScrollEventTime');
+export const SCROLL_EVENT_TIME: InjectionToken<string> = new InjectionToken('ScrollEventTime');
 
 /**
  * Detects when an element is scrolled into or out of the viewport
@@ -17,15 +18,15 @@ export const SCROLL_EVENT_TIME: OpaqueToken = new OpaqueToken('ScrollEventTime')
  *
  */
 @Injectable()
-export class ScrollEventPlugin extends EventManagerPlugin {
+export class ScrollEventPlugin extends MyEventManagerPlugin {
 
     private listeners: Function[] = [];
     private globalListener: Function|undefined = undefined;
 
     private subject: Subject<any> = new Subject();
 
-    constructor(@Inject(SCROLL_EVENT_TIME) time: number) {
-        super();
+    constructor(@Inject(DOCUMENT) doc: any, @Inject(SCROLL_EVENT_TIME) time: number) {
+        super(doc);
 
         this.subject
             .auditTime(time)

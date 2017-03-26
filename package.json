@@ -1,7 +1,21 @@
 {
   "name": "ng2-events",
-  "version": "2.0.0",
-  "description": "Supercharge your Angular2 event handling",
+  "version": "3.0.0",
+  "description": "Supercharge your Angular2+ event handling",
+  "keywords": [
+    "angular",
+    "angular2",
+    "events",
+    "event-handler",
+    "event-listener",
+    "changedetection",
+    "conditional",
+    "observe",
+    "once",
+    "outside",
+    "scroll",
+    "touch"
+  ],
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -21,22 +35,22 @@
   },
   "homepage": "https://github.com/kryops/ng2-events#readme",
   "devDependencies": {
-    "@angular/common": "2.4.1",
-    "@angular/compiler": "2.4.1",
-    "@angular/compiler-cli": "2.4.1",
-    "@angular/core": "2.4.1",
-    "@angular/platform-browser": "2.4.1",
-    "rimraf": "2.5.4",
-    "rxjs": "5.0.2",
-    "typescript": "2.0.10",
-    "zone.js": "0.7.4"
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.2.0",
+    "typescript": "^2.2.1",
+    "zone.js": "^0.8.5"
   },
   "peerDependencies": {
-    "@angular/common": "*",
-    "@angular/compiler": "*",
-    "@angular/core": "*",
-    "@angular/platform-browser": "*",
-    "rxjs": "*",
-    "zone.js": "*"
+    "@angular/common": ">=4.0.0",
+    "@angular/compiler": ">=4.0.0",
+    "@angular/core": ">=4.0.0",
+    "@angular/platform-browser": ">=4.0.0",
+    "rxjs": ">=5.0.0",
+    "zone.js": ">=0.7.0"
   }
 }

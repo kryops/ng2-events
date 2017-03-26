@@ -1,4 +1,6 @@
-Extensions to the Angular2 event handling to make use of additional events and allow for better control over change detection for high-performance applications:
+**This version is compatible with Angular 4. For Angular 2, use version 2.0.0**
+
+Extensions to the Angular event handling to make use of additional events and allow for better control over change detection for high-performance applications:
 
 *   Listen to events outside of the current element
 *   Up/down event handlers for cross-browser touch/mouse events

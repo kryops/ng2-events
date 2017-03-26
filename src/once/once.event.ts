@@ -1,5 +1,6 @@
-import {Injectable} from "@angular/core";
-import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event_manager";
+import {Inject, Injectable} from "@angular/core";
+import {DOCUMENT} from "@angular/platform-browser";
+import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
 /**
  * Automatically unregister an event listener after the event fired once
@@ -9,7 +10,11 @@ import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event
  *
  */
 @Injectable()
-export class OnceEventPlugin extends EventManagerPlugin {
+export class OnceEventPlugin extends MyEventManagerPlugin {
+
+    constructor(@Inject(DOCUMENT) doc: any) {
+        super(doc)
+    }
 
     supports(eventName: string): boolean {
         return eventName.indexOf('once.') === 0;

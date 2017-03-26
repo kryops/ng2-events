@@ -16,7 +16,8 @@
   },
   "exclude": [
     "node_modules/**",
-    "lib/**"
+    "lib/**",
+    "demo/**"
   ],
   "angularCompilerOptions": {
     "genDir": "lib",

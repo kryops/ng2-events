@@ -1,6 +1,7 @@
-import {Injectable} from "@angular/core";
-import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event_manager";
+import {Inject, Injectable} from "@angular/core";
+import {DOCUMENT} from "@angular/platform-browser";
 import {Subject} from "rxjs/Subject";
+import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
 /**
  * Control event listeners with an observable operator without triggering change detection
@@ -18,7 +19,11 @@ import {Subject} from "rxjs/Subject";
  * use the ObserveEventDirective.
  */
 @Injectable()
-export class ObserveEventPlugin extends EventManagerPlugin {
+export class ObserveEventPlugin extends MyEventManagerPlugin {
+
+    constructor(@Inject(DOCUMENT) doc: any) {
+        super(doc)
+    }
 
     supports(eventName: string): boolean {
         return eventName.indexOf('observe.') === 0;

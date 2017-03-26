@@ -1,5 +1,6 @@
-import {Injectable} from "@angular/core";
-import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event_manager";
+import {Inject, Injectable} from "@angular/core";
+import {DOCUMENT} from "@angular/platform-browser";
+import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
 /**
  * Listen to events without triggering change detection
@@ -24,7 +25,11 @@ import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event
  *
  */
 @Injectable()
-export class UndetectedEventPlugin extends EventManagerPlugin {
+export class UndetectedEventPlugin extends MyEventManagerPlugin {
+
+    constructor(@Inject(DOCUMENT) doc: any) {
+        super(doc)
+    }
 
     supports(eventName: string): boolean {
         return eventName.indexOf('undetected.') === 0;

@@ -1,5 +1,6 @@
-import {Injectable} from "@angular/core";
-import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event_manager";
+import {Inject, Injectable} from "@angular/core";
+import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
+import {DOCUMENT} from "@angular/platform-browser";
 
 /**
  * Listen to events that are fired outside of the current element and its children
@@ -9,7 +10,11 @@ import {EventManagerPlugin} from "@angular/platform-browser/src/dom/events/event
  *
  */
 @Injectable()
-export class OutsideEventPlugin extends EventManagerPlugin {
+export class OutsideEventPlugin extends MyEventManagerPlugin {
+
+    constructor(@Inject(DOCUMENT) doc: any) {
+        super(doc)
+    }
 
     supports(eventName: string): boolean {
         return eventName.indexOf('outside.') === 0;
