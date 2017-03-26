@@ -1,0 +1,15 @@
+node_modules/
+*~
+.idea/
+.project
+.settings/
+Thumbs.db
+npm-debug.log
+
+!.gitkeep
+
+lib/
+*.tgz
+*.d.ts
+*.metadata.json
+*.ngsummary.json
