@@ -17,12 +17,21 @@
     "touch"
   ],
   "main": "./lib/index.js",
+  "jsnext:main": "./lib/ng2-events.esm.js",
+  "module": "./lib/ng2-events.esm.js",
+  "es2015": "./lib/ng2-events.es2015.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "npm run clean && npm run ngc",
-    "ngc": "ngc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf lib tmp",
+    "build": "npm run clean && npm run ngc:lib && npm run ngc:flat && npm run rollup && npm run tsc:es5 && npm run cpy:metadata && npm run cpy:bundle",
+    "ngc:lib": "ngc -p tsconfig-ngc-lib.json",
+    "ngc:flat": "ngc -p tsconfig-ngc-flat.json",
+    "rollup": "rollup -c",
+    "tsc:es5": "tsc -p tsconfig-es5-bundle.json",
+    "cpy:metadata": "cpy tmp/ngc/ng2-events.metadata.json --rename=ng2-events.es2015.metadata.json lib && cpy tmp/ngc/ng2-events.metadata.json --rename=ng2-events.esm.metadata.json lib",
+    "cpy:bundle": "cpy tmp/tsc/ng2-events.es2015.js --rename=ng2-events.esm.js lib",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -40,7 +49,10 @@
     "@angular/compiler-cli": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
+    "cpy-cli": "^1.0.1",
     "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "rxjs": "^5.2.0",
     "typescript": "^2.3.2",
     "zone.js": "^0.8.5"

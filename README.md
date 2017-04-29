@@ -40,7 +40,32 @@ Extensions to the Angular event handling to make use of additional events and al
 npm install --save ng2-events
 ```
 
-This package is distributed as CommonJS modules. If you use Rollup as your build system, you have to import it using the CommonJS plugin:
+## Usage
+
+To use all of the events, import the `Ng2EventsModule` into your application or shared `NgModule`:
+
+```ts
+import {NgModule} from "@angular/core";
+import {Ng2EventsModule} from "ng2-events";
+
+@NgModule({
+    imports: [Ng2EventsModule],
+    exports: [Ng2EventsModule]
+})
+export class SharedModule {}
+```
+
+The recommended way is to only import the sub-modules for the features you need. Every module can either be imported from the package root or from its own sub-folder. Using deep imports is recommended if you only want to use a few of the modules in this library and your package manager does not support tree-shaking.
+
+```ts
+// top-level import
+import {OutsideEventModule} from "ng2-events";
+
+// deep import
+import {OutsideEventModule} from "ng2-events/lib/outside";
+```
+
+If you use Rollup as your build system and you use deep imports, you have to add the CommonJS plugin:
 
 ```js
 import nodeResolve from "rollup-plugin-node-resolve";
@@ -58,22 +83,12 @@ export default {
 }
 ```
 
-## Usage
+**package.json main fields:**
 
-To use all of the events, import the `Ng2EventsModule` into your application or shared `NgModule`:
-
-```ts
-import {NgModule} from "@angular/core";
-import {Ng2EventsModule} from "ng2-events";
-
-@NgModule({
-    imports: [Ng2EventsModule],
-    exports: [Ng2EventsModule]
-})
-export class SharedModule {}
-```
-
-The recommended way is to only import the sub-modules for the features you need.
+*   `main`: CommonJS library index (ES5)
+*   `jsnext:main`: Flat ESM bundle (ES5)
+*   `module`: Flat ESM bundle (ES5)
+*   `es2015`: Flat ESM bundle (ES2015)
 
 
 ## Additional Events

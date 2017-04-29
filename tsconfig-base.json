@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": false,
     "emitDecoratorMetadata": true,
@@ -9,18 +7,15 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "strictNullChecks": false,
-    "outDir": "lib",
-    "declaration": true,
+    "strictNullChecks": true,
     "lib": ["es5", "es2015", "dom", "ScriptHost"]
   },
+  "files": [
+    "src/index.ts"
+  ],
   "exclude": [
     "node_modules/**",
     "lib/**",
     "demo/**"
-  ],
-  "angularCompilerOptions": {
-    "genDir": "lib",
-    "skipTemplateCodegen": true
-  }
+  ]
 }

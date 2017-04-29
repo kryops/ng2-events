@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig-base.json",
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "outDir": "tmp/ngc",
+    "declaration": true
+  },
+  "angularCompilerOptions": {
+    "genDir": "tmp/ngc",
+    "skipTemplateCodegen": true,
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "ng2-events.js",
+    "flatModuleId": "ng2-events"
+  }
+}

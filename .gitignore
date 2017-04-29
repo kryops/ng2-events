@@ -10,6 +10,7 @@ Thumbs.db
 
 lib/
 demo/dist/
+tmp/
 *.tgz
 *.d.ts
 *.metadata.json
