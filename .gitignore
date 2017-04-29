@@ -4,11 +4,12 @@ node_modules/
 .project
 .settings/
 Thumbs.db
-npm-debug.log
+*.log
 
 !.gitkeep
 
 lib/
+demo/dist/
 *.tgz
 *.d.ts
 *.metadata.json

@@ -3,7 +3,7 @@
 .project
 .settings/
 Thumbs.db
-npm-debug.log
+*.log
 *.tgz
 
 *.ts
