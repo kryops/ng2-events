@@ -10,3 +10,5 @@ import {ConditionEventDirective} from "./condition-event.directive";
     ]
 })
 export class ConditionEventDirectiveModule {}
+
+export default ConditionEventDirectiveModule

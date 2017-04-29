@@ -12,3 +12,5 @@ import {OutsideEventPlugin} from "./outside.event";
     ]
 })
 export class OutsideEventModule {}
+
+export default OutsideEventModule

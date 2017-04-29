@@ -12,3 +12,5 @@ import {UndetectedEventPlugin} from "./undetected.event";
     ]
 })
 export class UndetectedEventModule {}
+
+export default UndetectedEventModule

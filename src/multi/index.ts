@@ -12,3 +12,5 @@ import {MultiEventPlugin} from "./multi.event";
     ]
 })
 export class MultiEventModule {}
+
+export default MultiEventModule

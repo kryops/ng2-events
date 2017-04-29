@@ -18,3 +18,5 @@ import {ScrollEventPlugin, SCROLL_EVENT_TIME} from "./scroll.event";
 export class ScrollEventModule {}
 
 export {SCROLL_EVENT_TIME} from './scroll.event';
+
+export default ScrollEventModule

@@ -10,3 +10,5 @@ import {ObserveEventDirective} from "./observe-event.directive";
     ]
 })
 export class ObserveEventDirectiveModule {}
+
+export default ObserveEventDirectiveModule

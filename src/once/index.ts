@@ -12,3 +12,5 @@ import {OnceEventPlugin} from "./once.event";
     ]
 })
 export class OnceEventModule {}
+
+export default OnceEventModule

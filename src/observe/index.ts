@@ -12,3 +12,5 @@ import {ObserveEventPlugin} from "./observe.event";
     ]
 })
 export class ObserveEventModule {}
+
+export default ObserveEventModule

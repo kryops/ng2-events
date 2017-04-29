@@ -12,3 +12,5 @@ import {TouchEventPlugin} from "./touch.event";
     ]
 })
 export class TouchEventModule {}
+
+export default TouchEventModule
