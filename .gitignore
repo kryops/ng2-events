@@ -9,6 +9,7 @@ npm-debug.log
 !.gitkeep
 
 lib/
+demo/dist
 *.tgz
 *.d.ts
 *.metadata.json
