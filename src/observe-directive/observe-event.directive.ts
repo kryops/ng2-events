@@ -1,4 +1,4 @@
-import {Directive, Renderer, ElementRef, Input, NgZone, OnDestroy} from "@angular/core";
+import {Directive, Renderer2, ElementRef, Input, NgZone, OnDestroy} from "@angular/core";
 import {Subject} from "rxjs/Subject";
 
 /**
@@ -49,7 +49,7 @@ export class ObserveEventDirective implements OnDestroy {
 
 
     constructor(private elm: ElementRef,
-                private renderer: Renderer,
+                private renderer: Renderer2,
                 private zone: NgZone) { }
 
 
@@ -73,7 +73,7 @@ export class ObserveEventDirective implements OnDestroy {
         else {
             const scope = eventName.slice(0, colon);
             const realEventName = eventName.slice(colon+1);
-            return this.renderer.listenGlobal(scope, realEventName, handler);
+            return this.renderer.listen(scope, realEventName, handler);
         }
     }
 

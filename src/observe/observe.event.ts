@@ -1,5 +1,5 @@
 import {Inject, Injectable} from "@angular/core";
-import {DOCUMENT} from "@angular/platform-browser";
+import {DOCUMENT} from "@angular/common";
 import {Subject} from "rxjs/Subject";
 import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 

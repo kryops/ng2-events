@@ -1,5 +1,5 @@
 import {
-    Directive, Renderer, ElementRef, Input, EventEmitter, Output, OnChanges,
+    Directive, Renderer2, ElementRef, Input, EventEmitter, Output, OnChanges,
     OnDestroy, SimpleChanges
 } from "@angular/core";
 
@@ -29,7 +29,7 @@ export class ConditionEventDirective implements OnChanges, OnDestroy {
 
 
     constructor(private elm: ElementRef,
-                private renderer: Renderer) { }
+                private renderer: Renderer2) { }
 
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -64,7 +64,7 @@ export class ConditionEventDirective implements OnChanges, OnDestroy {
         else {
             const scope = eventName.slice(0, colon);
             const realEventName = eventName.slice(colon+1);
-            return this.renderer.listenGlobal(scope, realEventName, handler);
+            return this.renderer.listen(scope, realEventName, handler);
         }
     }
 

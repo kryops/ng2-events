@@ -1,5 +1,8 @@
 import {Component, DoCheck, NgZone, OnInit} from '@angular/core';
 import {Subject} from "rxjs/Subject";
+import {throttleTime} from "rxjs/operators";
+
+// needed for the observe event
 import "rxjs/add/operator/throttleTime";
 
 @Component({
@@ -17,7 +20,7 @@ export class AppComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     this.observeSubject
-      .throttleTime(1000)
+      .pipe(throttleTime(1000))
       .subscribe(($event: any) => {
         this.zone.run(() => this.addEvent($event.type, '(observe directive)'));
       });

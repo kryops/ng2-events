@@ -7,11 +7,11 @@
     "declaration": true
   },
   "angularCompilerOptions": {
-    "genDir": "tmp/ngc",
     "skipTemplateCodegen": true,
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "ng2-events.js",
-    "flatModuleId": "ng2-events"
+    "flatModuleId": "ng2-events",
+    "preserveWhitespaces": "off"
   }
 }

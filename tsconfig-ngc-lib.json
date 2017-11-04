@@ -7,9 +7,9 @@
     "declaration": true
   },
   "angularCompilerOptions": {
-    "genDir": "lib",
     "skipTemplateCodegen": true,
     "annotateForClosureCompiler": true,
-    "strictMetadataEmit": true
+    "strictMetadataEmit": true,
+    "preserveWhitespaces": "off"
   }
 }

@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
 import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
-import {DOCUMENT} from "@angular/platform-browser";
+import {DOCUMENT} from "@angular/common";
 
 /**
  * Listen to events that are fired outside of the current element and its children

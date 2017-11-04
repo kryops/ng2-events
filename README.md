@@ -1,4 +1,7 @@
-**This version is compatible with Angular 4. For Angular 2, use version 2.0.0**
+**This version is compatible with Angular 5**
+
+* For Angular 4, use version 3.1.0
+* For Angular 2, use version 2.0.0
 
 Extensions to the Angular event handling to make use of additional events and allow for better control over change detection for high-performance applications:
 
@@ -326,6 +329,8 @@ The method used must be present on the Observable object e.g. through an explici
 ```ts
 import 'rxjs/add/operator/throttleTime';
 ```
+
+**Note:** As of RxJS 5.5, this approach is discouraged! [(Read more)](https://github.com/ReactiveX/rxjs/blob/master/doc/lettable-operators.md)
 
 To get finer-grained control and the possibility to add multiple observable operators use the observe Directive.
 
