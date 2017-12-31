@@ -8,7 +8,7 @@
     <div class="panel-heading">
       <select class="form-control" [(ngModel)]="active">
         <option>outside</option>
-        <option>up/down</option>
+        <option>up/down/move</option>
         <option>scroll-in/scroll-out</option>
         <option>multi</option>
         <option>once</option>
@@ -27,19 +27,20 @@
         </button>
       </div>
 
-      <div *ngSwitchCase="'up/down'">
+      <div *ngSwitchCase="'up/down/move'">
         <button class="btn btn-primary"
                 (down)="addEvent('down')"
+                (move)="addEvent('move')"
                 (up)="addEvent('up')">
-          up/down
+          up/down/move
         </button>
       </div>
 
       <div *ngSwitchCase="'scroll-in/scroll-out'">
 
         <div class="thumbnail" *ngFor="let x of [1,2,3,4,5,6]"
-            (scroll-in)="setScrollVisibility(x, true)"
-            (scroll-out)="setScrollVisibility(x, false)">
+             (scroll-in)="setScrollVisibility(x, true)"
+             (scroll-out)="setScrollVisibility(x, false)">
 
           <img *ngIf="isScrollImageVisible(x)"
                style="width:300px;height:200px"

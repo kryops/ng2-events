@@ -116,7 +116,7 @@ export class SharedModule {}
 The event handler is called when an event is fired outside of the element and its children.
 
 
-### *up/down*: Cross-browser quick mouse/touch events
+### *up/down/move*: Cross-browser quick mouse/touch events
 
 ```ts
 import {NgModule} from "@angular/core";
@@ -130,7 +130,7 @@ export class SharedModule {}
 ```
 
 ```html
-<button (down)="activate()" (up)="deactivate()">...</button>
+<button (down)="activate()" (up)="deactivate()" (move)="active()">...</button>
 ```
 
 The up/down events are fired when one of the following events is fired on the element:
@@ -138,6 +138,12 @@ The up/down events are fired when one of the following events is fired on the el
 *   mousedown/mouseup
 *   pointerdown/pointerup
 *   touchstart/touchend
+
+The move event are fired when one of the following events is fired on the element:
+
+*   mousemove
+*   pointermove
+*   touchmove
 
 Note that `preventDefault()` is called on the first event to occur to make sure that the event handler is only fired once. This prevents touch-enabled devices from firing the handler for both the `touchstart` and the `mousedown` event.
 

@@ -17,14 +17,17 @@ export class TouchEventPlugin extends MyEventManagerPlugin {
     }
 
     supports(eventName: string): boolean {
-        return eventName === 'down' || eventName === 'up';
+        return eventName === 'down' || eventName === 'up' || eventName === 'move';
     }
 
     addEventListener(element: HTMLElement, eventName: string, handler: Function): Function {
 
-        const eventNames = (eventName === 'down')
-            ? ['mousedown', 'touchstart', 'pointerdown']
-            : ['mouseup', 'touchend', 'pointerup'];
+        let eventNames = ['mouseup', 'touchend', 'pointerup'];
+        if (eventName === 'move') {
+            eventNames = ['mousemove', 'touchmove', 'pointermove'];
+        } else if (eventName === 'down') {
+            eventNames = ['mousedown', 'touchstart', 'pointerdown'];
+        }
 
         const eventListeners = eventNames.map(x =>
             this.manager.addEventListener(element, x, (e: any) => {
