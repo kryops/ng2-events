@@ -19,7 +19,7 @@ Extensions to the Angular event handling to make use of additional events and al
 ```html
 <div (outside.click)="close()">...</div>
 
-<button (down)="activate()" (up)="deactivate()">...</button>
+<button (down)="activate()" (up)="deactivate()" (move)="active()">...</button>
 
 <div (scroll-in)="activate()" (scroll-out)="deactivate()">...</div>
 
@@ -139,15 +139,15 @@ The up/down events are fired when one of the following events is fired on the el
 *   pointerdown/pointerup
 *   touchstart/touchend
 
-The move event are fired when one of the following events is fired on the element:
+The move event is fired when one of the following events is fired on the element:
 
 *   mousemove
 *   pointermove
 *   touchmove
 
-Note that `preventDefault()` is called on the first event to occur to make sure that the event handler is only fired once. This prevents touch-enabled devices from firing the handler for both the `touchstart` and the `mousedown` event.
+Note that `preventDefault()` is called on the first event to occur to make sure that the event handler is only fired once. This prevents touch-enabled devices from firing the handler for both the `touchstart` and the `mousedown` event. Be aware that especially with the `move` event this might interfere with scrolling on touch-based devices!
 
-For more complex touch gestures use the HammerJS integration.
+For more complex touch gestures use the [HammerJS](https://github.com/hammerjs/hammer.js) integration.
 
 
 ### *scroll-in / scroll-out*: Detect when an element is entering or leaving the viewport
