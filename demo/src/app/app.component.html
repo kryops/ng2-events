@@ -14,7 +14,6 @@
         <option>once</option>
         <option>condition</option>
         <option>undetected</option>
-        <option>observe</option>
         <option>observe directive</option>
       </select>
     </div>
@@ -114,13 +113,6 @@
         <p>
           The function this button calls runs change detection every 3 clicks. However, all events are logged to the console.
         </p>
-      </div>
-
-      <div *ngSwitchCase="'observe'">
-        <button class="btn btn-primary"
-                (observe.throttleTime-1000.click)="addEvent('observe.throttleTime-1000.click')">
-          observe.throttleTime-1000.click
-        </button>
       </div>
 
       <div *ngSwitchCase="'observe directive'">

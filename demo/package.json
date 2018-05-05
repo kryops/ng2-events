@@ -22,9 +22,8 @@
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
     "core-js": "^2.5.5",
-    "ng2-events": "^4.1.0",
+    "ng2-events": "^4.2.0",
     "rxjs": "^6.1.0",
-    "rxjs-compat": "^6.1.0",
     "ts-helpers": "^1.1.2",
     "zone.js": "^0.8.26"
   },
@@ -43,7 +42,6 @@
     "karma-jasmine": "^1.1.2",
     "karma-remap-istanbul": "^0.6.0",
     "protractor": "~5.3.1",
-    "rxjs-tslint": "^0.1.3",
     "ts-node": "^6.0.2",
     "tslint": "^5.10.0",
     "typescript": "~2.7.0"
