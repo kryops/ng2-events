@@ -21,6 +21,7 @@
   "module": "./lib/ng2-events.esm.js",
   "es2015": "./lib/ng2-events.es2015.js",
   "types": "./lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "clean": "rimraf lib tmp",
     "build": "npm run clean && npm run ngc:lib && npm run ngc:flat && npm run rollup && npm run tsc:es5 && npm run cpy:metadata && npm run cpy:bundle",
