@@ -1,5 +1,5 @@
 import {Directive, Renderer2, ElementRef, Input, NgZone, OnDestroy} from "@angular/core";
-import {Subject} from "rxjs/Subject";
+import {Subject} from "rxjs";
 
 /**
  * Pass events to a given observable subject without triggering change detection

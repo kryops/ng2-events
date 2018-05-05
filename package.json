@@ -44,18 +44,18 @@
   },
   "homepage": "https://github.com/kryops/ng2-events#readme",
   "devDependencies": {
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
+    "@angular/common": "^6.0.0",
+    "@angular/compiler": "^6.0.0",
+    "@angular/compiler-cli": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/platform-browser": "^6.0.0",
     "cpy-cli": "^1.0.1",
     "rimraf": "^2.6.1",
-    "rollup": "^0.50.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rxjs": "^5.5.2",
-    "typescript": "2.4.2",
-    "zone.js": "^0.8.5"
+    "rollup": "^0.58.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rxjs": "^6.1.0",
+    "typescript": "~2.7.0",
+    "zone.js": "^0.8.26"
   },
   "peerDependencies": {
     "@angular/common": ">=5.0.0",

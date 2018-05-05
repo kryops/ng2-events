@@ -337,6 +337,7 @@ import 'rxjs/add/operator/throttleTime';
 ```
 
 **Note:** As of RxJS 5.5, this approach is discouraged! [(Read more)](https://github.com/ReactiveX/rxjs/blob/master/doc/lettable-operators.md)
+With RxJS 6, it is deprecated and can only be used through the `rxjs-compat` module!
 
 To get finer-grained control and the possibility to add multiple observable operators use the observe Directive.
 

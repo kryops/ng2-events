@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
-import {Subject} from "rxjs/Subject";
+import {Subject} from "rxjs";
 import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
 /**

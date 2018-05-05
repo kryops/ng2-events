@@ -1,7 +1,7 @@
 import {Injectable, Inject, InjectionToken} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
 import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
-import {Subject} from "rxjs/Subject";
+import {Subject} from "rxjs";
 import {auditTime} from "rxjs/operators";
 
 export const SCROLL_EVENT_TIME: InjectionToken<string> = new InjectionToken('ScrollEventTime');

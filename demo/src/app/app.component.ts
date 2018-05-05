@@ -1,5 +1,5 @@
 import {Component, DoCheck, NgZone, OnInit} from '@angular/core';
-import {Subject} from "rxjs/Subject";
+import {Subject} from "rxjs";
 import {throttleTime} from "rxjs/operators";
 
 // needed for the observe event
