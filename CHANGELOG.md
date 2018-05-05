@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.2.0 (2018-05-05)
+
+*   RxJS 6 compatibility
+
+
 ## v4.1.0 (2018-01-02)
 
 *   Add `move` touch event (@saitho in #2)
