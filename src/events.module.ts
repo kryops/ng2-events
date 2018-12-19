@@ -1,13 +1,13 @@
 import {NgModule} from "@angular/core";
-import {OutsideEventModule} from "./outside";
-import {UndetectedEventModule} from "./undetected";
-import {MultiEventModule} from "./multi";
-import {ObserveEventModule} from "./observe";
-import {ObserveEventDirectiveModule} from "./observe-directive";
-import {TouchEventModule} from "./touch";
-import {OnceEventModule} from "./once";
-import {ConditionEventDirectiveModule} from "./condition-directive";
-import {ScrollEventModule} from "./scroll";
+import {OutsideEventModule} from "./outside/index";
+import {UndetectedEventModule} from "./undetected/index";
+import {MultiEventModule} from "./multi/index";
+import {ObserveEventModule} from "./observe/index";
+import {ObserveEventDirectiveModule} from "./observe-directive/index";
+import {TouchEventModule} from "./touch/index";
+import {OnceEventModule} from "./once/index";
+import {ConditionEventDirectiveModule} from "./condition-directive/index";
+import {ScrollEventModule} from "./scroll/index";
 
 @NgModule({
     imports: [

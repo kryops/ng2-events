@@ -1,4 +1,4 @@
-**This version is compatible with Angular 5+6**
+**This version is compatible with Angular 5-7**
 
 * For Angular 4, use version 3.1.0
 * For Angular 2, use version 2.0.0
