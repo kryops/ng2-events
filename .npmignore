@@ -11,6 +11,7 @@ Thumbs.db
 *.ngsummary.json
 yarn.lock
 
+rollup.config.js
 tsconfig.json
 tsconfig-base.json
 tsconfig-es5-bundle.json
@@ -19,4 +20,5 @@ tsconfig-ngc-lib.json
 
 src/
 demo/
+docs/
 tmp/
