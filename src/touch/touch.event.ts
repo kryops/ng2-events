@@ -2,6 +2,30 @@ import {Inject, Injectable} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
 import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
+function getNativeEventNames(eventName: string): string[] {
+    const supportsPointerEvents = typeof(window) !== 'undefined' && 'PointerEvent' in window;
+
+    switch (eventName) {
+        case 'up':
+            return supportsPointerEvents
+                ? ['pointerup']
+                : ['mouseup', 'touchend'];
+
+        case 'down':
+            return supportsPointerEvents
+                ? ['pointerdown']
+                : ['mousedown', 'touchstart'];
+
+        case 'move':
+            return supportsPointerEvents
+                ? ['pointermove']
+                : ['mousemove', 'touchmove'];
+
+        default:
+            return [];
+    }
+}
+
 /**
  * Quick-firing 'up' and 'down' events that work cross-browser for mouse and touch events
  *
@@ -21,15 +45,7 @@ export class TouchEventPlugin extends MyEventManagerPlugin {
     }
 
     addEventListener(element: HTMLElement, eventName: string, handler: Function): Function {
-
-        let eventNames = ['mouseup', 'touchend', 'pointerup'];
-        if (eventName === 'move') {
-            eventNames = ['mousemove', 'touchmove', 'pointermove'];
-        } else if (eventName === 'down') {
-            eventNames = ['mousedown', 'touchstart', 'pointerdown'];
-        }
-
-        const eventListeners = eventNames.map(x =>
+        const eventListeners = getNativeEventNames(eventName).map(x =>
             this.manager.addEventListener(element, x, (e: any) => {
                 // prevent default so only one of the event listeners is fired
                 e.preventDefault();
