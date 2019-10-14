@@ -13,7 +13,7 @@ yarn.lock
 
 rollup.config.js
 tsconfig.json
-tsconfig-base.json
+tsconfig.json
 tsconfig-es5-bundle.json
 tsconfig-ngc-flat.json
 tsconfig-ngc-lib.json
