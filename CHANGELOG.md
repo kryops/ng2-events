@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.2.1 (2019-10-15)
+
+*   Prevent `up`/`down` events from firing twice on iOS 13 and Chrome Android (#5)
+
+
 ## v4.2.0 (2018-05-05)
 
 *   RxJS 6 compatibility
