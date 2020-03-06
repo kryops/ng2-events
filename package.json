@@ -1,6 +1,6 @@
 {
   "name": "ng2-events",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Supercharge your Angular2+ event handling",
   "keywords": [
     "angular",
@@ -63,10 +63,10 @@
     "zone.js": "^0.10.2"
   },
   "peerDependencies": {
-    "zone.js": ">=0.8.0",
-    "@angular/core": ">=5.0.0",
     "@angular/common": ">=5.0.0",
+    "@angular/core": ">=5.0.0",
     "@angular/platform-browser": ">=5.0.0",
-    "rxjs": ">=6.0.0"
+    "rxjs": ">=6.0.0",
+    "zone.js": ">=0.8.0"
   }
 }
