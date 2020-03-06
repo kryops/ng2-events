@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.2.2 (2020-03-06)
+
+*   Make compatible with Angular 9
+
+
 ## v4.2.1 (2019-10-15)
 
 *   Prevent `up`/`down` events from firing twice on iOS 13 and Chrome Android (#5)
