@@ -8,7 +8,8 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "strictNullChecks": true,
-    "lib": ["es5", "es2015", "dom", "ScriptHost"]
+    "lib": ["es5", "es2015", "dom", "ScriptHost"],
+    "rootDir": "src"
   },
   "files": [
     "src/index.ts"

@@ -12,6 +12,7 @@
     "strictMetadataEmit": true,
     "flatModuleOutFile": "ng2-events.js",
     "flatModuleId": "ng2-events",
-    "preserveWhitespaces": "off"
+    "preserveWhitespaces": "off",
+    "enableIvy": false
   }
 }

@@ -10,6 +10,7 @@
     "skipTemplateCodegen": true,
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
-    "preserveWhitespaces": "off"
+    "preserveWhitespaces": "off",
+    "enableIvy": false
   }
 }
