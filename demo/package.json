@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^12.0.2",
     "@angular/platform-browser-dynamic": "^12.0.2",
     "@angular/router": "^12.0.2",
-    "ng2-events": "../ng2-events-4.2.2.tgz",
+    "ng2-events": "../ng2-events-5.0.0.tgz",
     "rxjs": "^7.1.0",
     "ts-helpers": "^1.1.2",
     "zone.js": "~0.11.4"

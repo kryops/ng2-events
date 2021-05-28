@@ -6129,9 +6129,9 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-ng2-events@../ng2-events-4.2.2.tgz:
-  version "4.2.2"
-  resolved "../ng2-events-4.2.2.tgz#f3053840f07a7568a87b737c059593f63c1681dd"
+ng2-events@../ng2-events-5.0.0.tgz:
+  version "5.0.0"
+  resolved "../ng2-events-5.0.0.tgz#3a517adf7b972eaf581d35af1e443386e8cc972d"
 
 nice-try@^1.0.4:
   version "1.0.5"

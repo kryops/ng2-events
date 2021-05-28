@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v5.0.0 (2021-05-28)
 
 *   **[BREAKING]** Change compilation to partial-Ivy
 *   Update to Angular 12
