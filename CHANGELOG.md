@@ -4,6 +4,7 @@
 
 *   **[BREAKING]** Change compilation to partial-Ivy
 *   Update to Angular 12
+*   Remove deprecated `EventManager.addGlobalEventListener` calls
 
 For applications using Angular Ivy, but without the Angular CLI, follow the [docs on consuming partial Ivy code](https://angular.io/guide/creating-libraries#consuming-partial-ivy-code-outside-the-angular-cli).
 

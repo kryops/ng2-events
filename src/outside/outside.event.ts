@@ -24,7 +24,7 @@ export class OutsideEventPlugin extends MyEventManagerPlugin {
 
         const realEventName = eventName.slice(8);
 
-        return this.manager.addGlobalEventListener('document', realEventName, (e: Event) => {
+        return this.manager.addEventListener((element.ownerDocument || document) as any, realEventName, (e: Event) => {
             if(element !== e.target && !element.contains(e.target as any)) {
                 handler(e);
             }

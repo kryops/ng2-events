@@ -1,7 +1,7 @@
 import {EventManager} from "@angular/platform-browser";
 
 export abstract class MyEventManagerPlugin {
-    constructor(private _doc: any) {}
+    constructor(protected _doc: Document) {}
 
     manager: EventManager;
 

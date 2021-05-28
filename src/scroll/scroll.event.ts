@@ -85,7 +85,7 @@ export class ScrollEventPlugin extends MyEventManagerPlugin {
                 };
 
                 const listeners = ['scroll', 'resize', 'orientationchange']
-                    .map(x => this.manager.addGlobalEventListener('window', x, handler));
+                    .map(x => this.manager.addEventListener(this._doc.defaultView || window as any, x, handler));
 
                 this.globalListener = () => {
                     listeners.forEach(x => x());
