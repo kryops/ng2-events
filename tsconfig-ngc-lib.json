@@ -8,9 +8,8 @@
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
-    "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
-    "preserveWhitespaces": "off",
-    "enableIvy": false
+    "preserveWhitespaces": false,
+    "compilationMode": "partial"
   }
 }

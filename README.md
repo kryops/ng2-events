@@ -1,5 +1,7 @@
-**This version is compatible with Angular 5-10**
+**This version is compatible with Angular 9-12 (using Ivy)**
 
+* For Angular 9-12 apps using View Engine, use version 4.2.2
+* For Angular 5-8, use version 4.2.2
 * For Angular 4, use version 3.1.0
 * For Angular 2, use version 2.0.0
 
@@ -42,6 +44,8 @@ Extensions to the Angular event handling to make use of additional events and al
 ```
 npm install --save ng2-events
 ```
+
+For applications using Angular Ivy, but without the Angular CLI, follow the [docs on consuming partial Ivy code](https://angular.io/guide/creating-libraries#consuming-partial-ivy-code-outside-the-angular-cli).
 
 ## Usage
 
@@ -337,7 +341,10 @@ import 'rxjs/add/operator/throttleTime';
 ```
 
 **Note:** As of RxJS 5.5, this approach is discouraged! [(Read more)](https://github.com/ReactiveX/rxjs/blob/master/doc/lettable-operators.md)
+
 With RxJS 6, it is deprecated and can only be used through the `rxjs-compat` module!
+
+With RxJS 7, this is no longer possible.
 
 To get finer-grained control and the possibility to add multiple observable operators use the observe Directive.
 

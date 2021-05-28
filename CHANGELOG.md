@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+*   **[BREAKING]** Change compilation to partial-Ivy
+*   Update to Angular 12
+
+For applications using Angular Ivy, but without the Angular CLI, follow the [docs on consuming partial Ivy code](https://angular.io/guide/creating-libraries#consuming-partial-ivy-code-outside-the-angular-cli).
+
 ## v4.2.2 (2020-03-06)
 
 *   Make compatible with Angular 9

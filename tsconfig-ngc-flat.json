@@ -8,11 +8,10 @@
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
-    "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "ng2-events.js",
     "flatModuleId": "ng2-events",
-    "preserveWhitespaces": "off",
-    "enableIvy": false
+    "preserveWhitespaces": false,
+    "compilationMode": "partial"
   }
 }

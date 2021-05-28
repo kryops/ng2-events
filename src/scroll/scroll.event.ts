@@ -23,7 +23,7 @@ export class ScrollEventPlugin extends MyEventManagerPlugin {
     private listeners: Function[] = [];
     private globalListener: Function|undefined = undefined;
 
-    private subject: Subject<any> = new Subject();
+    private subject: Subject<void> = new Subject();
 
     constructor(@Inject(DOCUMENT) doc: any, @Inject(SCROLL_EVENT_TIME) time: number) {
         super(doc);
