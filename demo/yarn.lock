@@ -6117,7 +6117,7 @@ neo-async@^2.6.0, neo-async@^2.6.2:
 
 ng2-events@../ng2-events-5.0.0.tgz:
   version "5.0.0"
-  resolved "../ng2-events-5.0.0.tgz#3a517adf7b972eaf581d35af1e443386e8cc972d"
+  resolved "../ng2-events-5.0.0.tgz#eea7ff9f8399503bc66b6e47f6fa9e908c90e32d"
 
 nice-try@^1.0.4:
   version "1.0.5"
