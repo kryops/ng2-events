@@ -1,4 +1,4 @@
-**This version is compatible with Angular 9-12 (using Ivy)**
+**This version is compatible with Angular 9-13 (using Ivy)**
 
 * For Angular 9-12 apps using View Engine, use version 4.2.2
 * For Angular 5-8, use version 4.2.2
