@@ -11,7 +11,7 @@ Thumbs.db
 *.ngsummary.json
 yarn.lock
 
-rollup.config.js
+rollup.config.mjs
 tsconfig.json
 tsconfig.json
 tsconfig-es5-bundle.json
