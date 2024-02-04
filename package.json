@@ -38,7 +38,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/kryops/ng2-events.git"
   },
-  "author": "Michael Strobel <michael@kryops.de>",
+  "author": "Michael Manzinger <michael@kryops.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kryops/ng2-events/issues"
