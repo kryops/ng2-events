@@ -1,6 +1,6 @@
 import {Inject, Injectable} from "@angular/core";
 import {DOCUMENT} from "@angular/common";
-import {Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {MyEventManagerPlugin} from "../__util/event-manager-plugin";
 
 /**
@@ -43,10 +43,10 @@ export class ObserveEventPlugin extends MyEventManagerPlugin {
             const subject = new Subject();
             let observable = subject.asObservable();
 
-            if(observable[fnName]) {
+            if((observable as any)[fnName]) {
                 observable = (fnArg !== undefined)
-                    ? observable[fnName](fnArg)
-                    : observable[fnName]();
+                    ? (observable as any)[fnName](fnArg)
+                    : (observable as any)[fnName]();
             }
             else {
                 console.error('The function "' + fnName + '" does not exist on Observable!');

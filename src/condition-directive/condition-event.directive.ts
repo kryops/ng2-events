@@ -15,7 +15,8 @@ import {
  * The [ev-events] property can be either a string or an array of strings to handle multiple events
  */
 @Directive({
-    selector: '[ev-condition]'
+    selector: '[ev-condition]',
+    standalone: false,
 })
 export class ConditionEventDirective implements OnChanges, OnDestroy {
 

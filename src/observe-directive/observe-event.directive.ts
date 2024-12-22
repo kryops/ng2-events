@@ -28,7 +28,8 @@ import {Subject} from "rxjs";
  *
  */
 @Directive({
-    selector: '[ev-observe]'
+    selector: '[ev-observe]',
+    standalone: false,
 })
 export class ObserveEventDirective implements OnDestroy {
 
