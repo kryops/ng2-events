@@ -45,4 +45,5 @@ Thumbs.db
 
 *~
 *.tgz
-
+.yarn/install-state.gz
+.yarn/cache
