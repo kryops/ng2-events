@@ -1,5 +1,5 @@
-import { Injectable, Inject, InjectionToken } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable, Inject, InjectionToken, DOCUMENT } from '@angular/core';
+
 import { MyEventManagerPlugin } from './event-manager-plugin';
 import { Subject } from 'rxjs';
 import { auditTime } from 'rxjs/operators';

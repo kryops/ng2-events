@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **[BREAKING]** Requires Angular 20
+
 ## v6.0.0 (2025-04-21)
 
 - **[BREAKING]** Converted project to Angular CLI workspace

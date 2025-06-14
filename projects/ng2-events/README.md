@@ -1,7 +1,8 @@
 # ng2-events
 
-**This version is compatible with Angular 18+**
+**This version is compatible with Angular 20+**
 
+- For Angular 18-19, use version 6.0.0
 - For Angular 13-17, use version 5.0.0
 - For Angular 9-12 apps using View Engine, use version 4.2.2
 - For Angular 5-8, use version 4.2.2
