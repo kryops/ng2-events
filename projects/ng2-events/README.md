@@ -243,6 +243,8 @@ this.events = this.events.slice();
 
 ### _undetected_: Listen to events without triggering change detection
 
+**Note**: Does not work with zoneless change detection.
+
 ```ts
 {
   provide: EVENT_MANAGER_PLUGINS,
@@ -300,6 +302,31 @@ export class ExampleComponent implements OnInit {
       .filter(someCondition)
       // ...
       .subscribe(($event) => this.zone.run(() => this.handleEvent($event)));
+  }
+
+  private handleEvent($event: any) {
+    // ...
+  }
+}
+```
+
+With zoneless change detection:
+
+```ts
+export class ExampleComponent implements OnInit {
+  public subject = new Subject();
+
+  constructor(private ref: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.subject
+      .throttleTime(300)
+      .filter(someCondition)
+      // ...
+      .subscribe(($event) => {
+        this.handleEvent($event);
+        this.ref.markForCheck();
+      });
   }
 
   private handleEvent($event: any) {
