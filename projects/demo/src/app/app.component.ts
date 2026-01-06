@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, DoCheck, NgZone, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ConditionEventDirective, ObserveEventDirective } from 'ng2-events';
@@ -7,11 +7,10 @@ import { Subject, throttleTime } from 'rxjs';
 @Component({
   selector: 'app-root',
   imports: [
-    CommonModule,
     FormsModule,
     ConditionEventDirective,
-    ObserveEventDirective,
-  ],
+    ObserveEventDirective
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
