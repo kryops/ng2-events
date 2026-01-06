@@ -15,6 +15,7 @@ docs
 /node_modules
 npm-debug.log
 yarn-error.log
+/.yarn
 
 # IDEs and editors
 .idea/

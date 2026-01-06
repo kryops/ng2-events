@@ -1,4 +1,3 @@
-
 import { Component, DoCheck, NgZone, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ConditionEventDirective, ObserveEventDirective } from 'ng2-events';
@@ -6,11 +5,7 @@ import { Subject, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    FormsModule,
-    ConditionEventDirective,
-    ObserveEventDirective
-],
+  imports: [FormsModule, ConditionEventDirective, ObserveEventDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
